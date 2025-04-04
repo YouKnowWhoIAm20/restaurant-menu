@@ -6,12 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MySQL connection
 const db = mysql.createConnection({
     host: 'sql12.freesqldatabase.com',
     user: 'sql12771237',
     password: 'Lqs9eGr86Z',
-    database: 'sql12771237'
+    database: 'sql12771237',
+    port: 3306 
 });
 
 db.connect(err => {
