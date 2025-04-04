@@ -7,12 +7,12 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '', // If your MySQL has a password, add it here
-    database: 'restaurant_db' // Change this to the actual database name you imported
+    host: 'sql12.freesqldatabase.com',
+    user: 'sql12771237',
+    password: 'Lqs9eGr86Z',
+    database: 'sql12771237',
+    port: 3306
 });
-
 
 db.connect(err => {
     if (err) throw err;
@@ -26,4 +26,4 @@ app.get('/menu', (req, res) => {
     });
 });
 
-app.listen(5001, () => console.log('Server running on port 5000'));
+app.listen(5000, () => console.log('Server running on port 5000'));
