@@ -5,10 +5,10 @@ function App() {
     const [menu, setMenu] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5001/menu') // Ensure this matches your backend port
+        fetch('https://restaurant-menu-2-zw4v.onrender.com/menu')
             .then(res => res.json())
             .then(data => {
-                console.log("API Response:", data); // Logs API data in the browser console
+                console.log("API Response:", data);
                 setMenu(data);
             })
             .catch(err => console.error("Error fetching menu:", err));
