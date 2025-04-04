@@ -5,14 +5,20 @@ function App() {
     const [menu, setMenu] = useState([]);
 
     useEffect(() => {
-        fetch('https://restaurant-menu-2-zw4v.onrender.com/menu')
-            .then(res => res.json())
-            .then(data => {
-                console.log("API Response:", data);
-                setMenu(data);
-            })
-            .catch(err => console.error("Error fetching menu:", err));
-    }, []);
+      const fetchMenu = async () => {
+          try {
+              const res = await fetch('https://restaurant-menu-2-zw4v.onrender.com/menu');
+              if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+              const data = await res.json();
+              console.log("✅ API Response:", data);
+              setMenu(data);
+          } catch (err) {
+              console.error("❌ Error fetching menu:", err);
+          }
+      };
+  
+      fetchMenu();
+  }, []);
 
     return (
         <div className='container mt-4'>
