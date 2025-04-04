@@ -20,10 +20,8 @@ db.connect(err => {
 });
 
 app.get('/menu', (req, res) => {
-    db.query('SELECT `HOTEL THE PLAZA` AS name, `column_2` AS price FROM mytable', (err, results) => {
-        if (err) return res.status(500).json(err);
-        res.json(results);
-    });
+    res.json([{ name: 'Test Dish', price: '123' }]);
 });
+
 
 app.listen(5000, () => console.log('Server running on port 5000'));
