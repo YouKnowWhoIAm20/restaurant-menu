@@ -19,6 +19,10 @@ db.connect(err => {
     console.log('MySQL Connected...');
 });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Restaurant Menu API!');
+  });
+
 // Sample route
 app.get('/menu', (req, res) => {
     db.query('SELECT `HOTEL THE PLAZA` AS name, `column_2` AS price FROM mytable', (err, results) => {
